@@ -1,0 +1,88 @@
+[project]
+name = "jaxsce"
+description = "A package that uses jaxsce for Strictly Correlated Electrons in Density Functional Theory."
+version = "0.0.1"
+authors = [
+    { name = "Derk P. Kooi", email = "derkkooi@gmail.com" },
+    { name = "Kimberly J. Daas", email = "t.j.daas@vu.nl"},
+]
+maintainers = [
+    { name = "Derk P. Kooi", email = "derkkooi@gmail.com" },
+    { name = "Kimberly J. Daas", email = "t.j.daas@vu.nl"},
+]
+classifiers=[
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["jax", "dft"]
+
+license={file = "LICENSE"}
+requires-python = ">=3.7"
+dependencies = [
+    "basis-set-exchange",
+    "dataclasses-json",
+    "jax",
+    "jaxlib",
+    "jaxopt",
+    "numpy",
+    "pyscf",
+    "scipy",
+    "sympy",
+    "sympy2jax",
+    "tensorflow",
+    "tensorflow-probability",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    "pytest",
+]
+
+[project.urls]
+homepage="https://github.com/DerkKooi/jaxsce"
+
+[build-system]
+requires = [
+  "setuptools >= 40.9.0",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["jaxsce*"]
+exclude = ["jaxsce.tests*"]
+namespaces = false
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
+[tool.isort]
+profile = "black"
+src_paths = ["jaxsce", "tests"]
+
+[tool.ruff]
+include = ["*.py", "*.pyi", "**/pyproject.toml"]
+select = ["E", "F"]
+ignore = ["E741"]
+
+fixable = ["ALL"]
+unfixable = []
+
+# Same as Black.
+line-length = 100
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Assume Python 3.10.
+target-version = "py310"
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+include = '\.pyi?$'
