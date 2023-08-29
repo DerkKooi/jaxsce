@@ -1,0 +1,1 @@
+{"opt": {"N_grid": 1025, "grid": "Ne"}, "density": {"name": "bohr_atom", "Nel": 2, "cumulant_threshold": 1e-08, "N_points_Ne": 10000, "invNe_tol": 1e-10, "N_int": 100000, "rho_trunc": 0.0, "scale_int": 3.0}}

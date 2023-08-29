@@ -1,0 +1,1 @@
+{"opt": {"N_grid": 1025, "grid": "Ne"}, "density": {"name": "hartree-fock", "Nel": 2, "atom": "He", "charge": 0, "spin": 0, "N_points_Ne": 10000, "N_int": 100000, "cumulant_threshold": 1e-08, "invNe_tol": 1e-10, "rho_trunc": 1e-10, "maxiter": 1000, "basis": "aug-cc-pVQZ", "method": "newton", "chkfile_name": "chkfile.chk", "chkfile_dir": "data/He/aug-cc-pVQZ"}}
